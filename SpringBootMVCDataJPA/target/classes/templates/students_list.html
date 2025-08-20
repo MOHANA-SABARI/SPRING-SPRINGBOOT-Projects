@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Student Management System</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<h1>List Students</h1>
+		</div>
+		<div class="row">
+			<div class="col-lg-3">
+				<a th:href="@{/login/students/addform}" class="btn btn-primary btn-sm mb-3">Add Student</a>
+			</div>
+		</div>
+		<table class="table table-striped table-bordered">
+			<thead class="table-dark">
+				<tr>
+					<th>RollNo</th>
+					<th>Age</th>
+					<th>First Name</th>
+					<th>Email</th>
+					<th>Password</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="student: ${modelstudents}">
+					<td th:text="${student.roll}"></td>
+					<td th:text="${student.age}"></td>
+					<td th:text="${student.name}"></td>
+					<td th:text="${student.email}"></td>
+					<td th:text="${student.password}"></td>
+					<td>
+						<a th:href="@{/login/students/edit/{roll}(roll=${student.roll})}" class="btn btn-primary">Update</a>
+						<a th:href="@{/login/students/delete/{roll}(roll=${student.roll})}" class="btn btn-danger">Delete</a>
+							
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</body>
+</html>

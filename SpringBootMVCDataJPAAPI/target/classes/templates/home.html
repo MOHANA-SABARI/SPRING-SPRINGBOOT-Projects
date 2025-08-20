@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blood Donation Management System</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .navbar {
+      background-color: #d9534f;
+    }
+    .navbar-brand {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #fff;
+    }
+    .navbar-nav .nav-link {
+      color: #fff;
+      font-weight: bold;
+    }
+    .hero-section {
+      height: 70vh;
+      background: url('https://www.redcrossblood.org/content/dam/redcrossblood/background-images/homepage/Hero_Blood_BlkManGreyShirt_Eagle.jpg') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+    .hero-section h1 {
+      font-size: 3.5rem;
+      font-weight: bold;
+    }
+    .hero-section p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+    .btn-primary {
+      background-color: #c9302c;
+      border: none;
+    }
+    .btn-primary:hover {
+      background-color: #ac2925;
+    }
+    .info-section {
+      padding: 4rem 0;
+      background-color: #fff;
+    }
+    .info-section h2 {
+      font-weight: bold;
+      margin-bottom: 2rem;
+    }
+    .card {
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    .footer {
+      background-color: #d9534f;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Blood Donation</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/register}">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/login}">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div>
+      <h1>Save a Life, Donate Blood</h1>
+      <p>Join our mission to help those in need by donating blood.</p>
+      <a th:href="@{/login/students}" class="btn btn-primary btn-lg">View a Donor List</a>
+    </div>
+  </section>
+
+  <!-- Information Section -->
+  <section class="info-section container">
+    <div class="text-center">
+      <h2>Why Donate Blood?</h2>
+      <p class="lead">Every donation can save up to three lives. Here are a few reasons why your contribution matters.</p>
+    </div>
+    <div class="row mt-5">
+      <div class="col-md-4">
+        <div class="card p-4">
+          <div class="card-body text-center">
+            <h5 class="card-title">Save Lives</h5>
+            <p class="card-text">Your blood can be used in emergency situations to save people’s lives.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-4">
+          <div class="card-body text-center">
+            <h5 class="card-title">Help Patients</h5>
+            <p class="card-text">Patients undergoing surgeries, cancer treatments, and accidents rely on blood donations.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-4">
+          <div class="card-body text-center">
+            <h5 class="card-title">Feel Good</h5>
+            <p class="card-text">Donating blood not only helps others, but it’s good for your own health too!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2024 Blood Donation Management System. All rights reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+          integrity="sha384-MrcW6ZMFYhb7ieYoaXn6+IZ7YsN1pc8U9vYjF7iomWj6mbxw4+hI2AIWgFG3bB39" 
+          crossorigin="anonymous"></script>
+</body>
+</html>
